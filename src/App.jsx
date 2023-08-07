@@ -4,6 +4,7 @@ const width = 8;
 const candyColors = ["blue", "green", "orange", "purple", "red", "yellow"];
 
 const App = () => {
+  const [currentColorArrangement, setCurrentColorArrangement] = useState([]);
   const createBoard = () => {
     //we are looping through 8*8=64 times because thats the amount of squares we need to make our board
     const randomColorArrangement = [];
@@ -12,11 +13,12 @@ const App = () => {
         Math.floor(Math.random() * candyColors.length),
       ];
       const randomColor = candyColors[randomNumbersFrom0to5];
-
       randomColorArrangement.push(randomColor);
     }
-    console.log(randomColorArrangement);
+    setCurrentColorArrangement(randomColorArrangement);
   };
+
+  console.log(currentColorArrangement);
 
   createBoard();
 
