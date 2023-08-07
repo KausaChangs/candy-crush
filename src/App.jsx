@@ -7,8 +7,10 @@ const App = () => {
   const createBoard = () => {
     //we are looping through 8*8=64 times because thats the amount of squares we need to make our board
     for (let i = 0; i < width * width; i++) {
-      const randomColors =
-        candyColors[Math.floor(Math.random * candyColors.length)];
+      const randomNumbersFrom0to5 = [
+        Math.floor(Math.random * candyColors.length),
+      ];
+      const randomColors = candyColors[randomNumbersFrom0to5];
     }
   };
 
