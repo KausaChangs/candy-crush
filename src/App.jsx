@@ -24,7 +24,11 @@ const App = () => {
     createBoard();
   }, []);
 
-  return <div></div>;
+  return (
+    <div className="app">
+      <diV className="game"></diV>
+    </div>
+  );
 };
 
 export default App;
