@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./index.css";
 
 const width = 8;
 const candyColors = ["blue", "green", "orange", "purple", "red", "yellow"];
@@ -26,7 +27,11 @@ const App = () => {
 
   return (
     <div className="app">
-      <diV className="game"></diV>
+      <diV className="game">
+        {currentColorArrangement.map((currentCandyColor, index) => (
+          <img key={index} style={{ backgroundColor: currentCandyColor }} />
+        ))}
+      </diV>
     </div>
   );
 };
