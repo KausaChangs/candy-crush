@@ -6,6 +6,8 @@ const candyColors = ["blue", "green", "orange", "purple", "red", "yellow"];
 
 const App = () => {
   const [currentColorArrangement, setCurrentColorArrangement] = useState([]);
+
+  const checkForColumnOfThree = () => {};
   const createBoard = () => {
     //we are looping through 8*8=64 times because thats the amount of squares we need to make our board
     const randomColorArrangement = [];
@@ -29,7 +31,11 @@ const App = () => {
     <div className="app">
       <diV className="game">
         {currentColorArrangement.map((currentCandyColor, index) => (
-          <img key={index} style={{ backgroundColor: currentCandyColor }} />
+          <img
+            key={index}
+            style={{ backgroundColor: currentCandyColor }}
+            alt={currentCandyColor}
+          />
         ))}
       </diV>
     </div>
