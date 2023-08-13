@@ -17,6 +17,9 @@ const App = () => {
           (square) => currentColorArrangement[square] === decidedColor
         )
       ) {
+        columnOfThree.forEach(
+          (square) => currentColorArrangement[(square = "")]
+        );
       }
     }
   };
@@ -38,6 +41,14 @@ const App = () => {
   useEffect(() => {
     createBoard();
   }, []);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      checkForColumnOfThree();
+    }, 100);
+
+    return () => clearInterval(timer);
+  }, [checkForColumnOfThree]);
 
   return (
     <div className="app">
