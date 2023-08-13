@@ -18,7 +18,7 @@ const App = () => {
         )
       ) {
         columnOfThree.forEach(
-          (square) => currentColorArrangement[(square = "")]
+          (square) => (currentColorArrangement[square] = "")
         );
       }
     }
@@ -49,7 +49,7 @@ const App = () => {
     }, 100);
 
     return () => clearInterval(timer);
-  }, [checkForColumnOfThree]);
+  }, [checkForColumnOfThree, currentColorArrangement]);
 
   return (
     <div className="app">
