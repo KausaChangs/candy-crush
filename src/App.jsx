@@ -78,6 +78,8 @@ const App = () => {
     }
   };
 
+  const moveIntoSquareBelow = () => {};
+
   const createBoard = () => {
     //we are looping through 8*8=64 times because thats the amount of squares we need to make our board
     const randomColorArrangement = [];
