@@ -78,7 +78,14 @@ const App = () => {
     }
   };
 
-  const moveIntoSquareBelow = () => {};
+  const moveIntoSquareBelow = () => {
+    for (let i = 0; i < 64 - width; i++) {
+      if (currentColorArrangement[i + width] === "") {
+        currentColorArrangement[i + width] = currentColorArrangement[i];
+        currentColorArrangement[i] = "";
+      }
+    }
+  };
 
   const createBoard = () => {
     //we are looping through 8*8=64 times because thats the amount of squares we need to make our board
@@ -105,6 +112,7 @@ const App = () => {
       checkForRowOfFour();
       checkForColumnOfThree();
       checkForRowOfThree();
+      moveIntoSquareBelow();
       setCurrentColorArrangement([...currentColorArrangement]);
     }, 100);
 
@@ -114,6 +122,7 @@ const App = () => {
     checkForRowOfFour,
     checkForColumnOfThree,
     checkForRowOfThree,
+    moveIntoSquareBelow,
     currentColorArrangement,
   ]);
 
