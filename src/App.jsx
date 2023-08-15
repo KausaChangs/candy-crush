@@ -93,6 +93,18 @@ const App = () => {
     }
   };
 
+  const dragstart = () => {
+    console.log("drag start");
+  };
+
+  const dragDrop = () => {
+    console.log("drag drop");
+  };
+
+  const dragEnd = () => {
+    console.log("drag end");
+  };
+
   const createBoard = () => {
     //we are looping through 8*8=64 times because thats the amount of squares we need to make our board
     const randomColorArrangement = [];
@@ -140,6 +152,14 @@ const App = () => {
             key={index}
             style={{ backgroundColor: currentCandyColor }}
             alt={currentCandyColor}
+            data-id={index}
+            draggable={true}
+            onDragStart={dragstart}
+            onDragOver={(e) => e.preventDefault()}
+            onDragEnter={(e) => e.preventDefault()}
+            onDragLeave={(e) => e.preventDefault()}
+            onDrop={dragDrop}
+            onDragEnd={dragEnd}
           />
         ))}
       </diV>
