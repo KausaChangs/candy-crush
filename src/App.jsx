@@ -93,7 +93,8 @@ const App = () => {
     }
   };
 
-  const dragstart = () => {
+  const dragstart = (e) => {
+    console.log(e.target);
     console.log("drag start");
   };
 
@@ -117,8 +118,6 @@ const App = () => {
     }
     setCurrentColorArrangement(randomColorArrangement);
   };
-
-  console.log(currentColorArrangement);
 
   useEffect(() => {
     createBoard();
@@ -146,7 +145,7 @@ const App = () => {
 
   return (
     <div className="app">
-      <diV className="game">
+      <div className="game">
         {currentColorArrangement.map((currentCandyColor, index) => (
           <img
             key={index}
@@ -162,7 +161,7 @@ const App = () => {
             onDragEnd={dragEnd}
           />
         ))}
-      </diV>
+      </div>
     </div>
   );
 };
