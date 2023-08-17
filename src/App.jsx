@@ -7,6 +7,7 @@ const candyColors = ["blue", "green", "orange", "purple", "red", "yellow"];
 const App = () => {
   const [currentColorArrangement, setCurrentColorArrangement] = useState([]);
   const [squareBeingDragged, setSquareBeingDragged] = useState(null);
+  const [squareBeingReplaced, setSquareBeingReplaced] = useState(null);
 
   const checkForColumnOfFour = () => {
     for (let i = 0; i <= 39; i++) {
@@ -97,14 +98,20 @@ const App = () => {
   const dragstart = (e) => {
     console.log(e.target);
     console.log("drag start");
+    setSquareBeingDragged(e.target);
   };
 
-  const dragDrop = () => {
+  const dragDrop = (e) => {
+    console.log(e.target);
     console.log("drag drop");
+    setSquareBeingReplaced(e.target);
   };
 
   const dragEnd = () => {
     console.log("drag end");
+    const squareBeingReplacedId = parseInt(
+      squareBeingReplaced.getAttribute("data-id")
+    );
   };
 
   const createBoard = () => {
