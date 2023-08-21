@@ -117,6 +117,11 @@ const App = () => {
       squareBeingReplaced.getAttribute("data-id")
     );
 
+    currentColorArrangement[squareBeingReplacedId] =
+      squareBeingDragged.style.backgroundColor;
+    currentColorArrangement[squareBeingDraggedId] =
+      squareBeingReplaced.style.backgroundColor;
+
     console.log("squareBeingDraggedIn", squareBeingDraggedId);
     console.log("squareBeingReplaceddId", squareBeingReplacedId);
   };
