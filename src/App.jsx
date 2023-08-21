@@ -110,12 +110,15 @@ const App = () => {
   const dragEnd = () => {
     console.log("drag end");
 
-    const squareBeingDraggedIn = parent(
+    const squareBeingDraggedId = parseInt(
       squareBeingDragged.getAttribute("data-id")
     );
     const squareBeingReplacedId = parseInt(
       squareBeingReplaced.getAttribute("data-id")
     );
+
+    console.log("squareBeingDraggedIn", squareBeingDraggedId);
+    console.log("squareBeingReplaceddId", squareBeingReplacedId);
   };
 
   const createBoard = () => {
