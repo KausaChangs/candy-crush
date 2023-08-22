@@ -22,6 +22,7 @@ const App = () => {
         columnOfFour.forEach(
           (square) => (currentColorArrangement[square] = "")
         );
+        return true;
       }
     }
   };
@@ -39,6 +40,7 @@ const App = () => {
         columnOfThree.forEach(
           (square) => (currentColorArrangement[square] = "")
         );
+        return true;
       }
     }
   };
@@ -58,6 +60,7 @@ const App = () => {
         )
       ) {
         rowOfFour.forEach((square) => (currentColorArrangement[square] = ""));
+        return true;
       }
     }
   };
@@ -76,6 +79,7 @@ const App = () => {
         )
       ) {
         rowOfThree.forEach((square) => (currentColorArrangement[square] = ""));
+        return true;
       }
     }
   };
