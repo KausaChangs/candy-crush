@@ -132,7 +132,7 @@ const App = () => {
       squareBeingDraggedId + width,
     ];
 
-    const validMove = validMoves.includes(i);
+    const validMove = validMoves.includes(squareBeingReplacedId);
   };
 
   const createBoard = () => {
